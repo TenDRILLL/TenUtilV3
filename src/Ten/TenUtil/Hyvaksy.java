@@ -25,11 +25,11 @@ public class Hyvaksy implements CommandExecutor
                 users.remove(player.getUniqueId().toString());
                 this.plugin.getConfig().set("accepted", (Object)users);
                 this.plugin.saveConfig();
-                player.sendMessage("Olet poistanut itsesi s\u00e4\u00e4nt\u00f6jen hyv\u00e4ksyneist\u00e4.");
+                player.sendMessage("Removed u from rule accepted list.");
                 return true;
             }
             if (this.plugin.getConfig().getStringList("accepted").contains(player.getUniqueId().toString())) {
-                player.sendMessage(ChatColor.RED + "Olet jo hyv\u00e4ksynyt s\u00e4\u00e4nn\u00f6t." + ChatColor.YELLOW + " Tervetuloa ;)");
+                player.sendMessage(ChatColor.RED + "Olet jo hyväksynyt säännöt." + ChatColor.YELLOW + " Tervetuloa ;)");
             }
             else {
                 final List users = this.plugin.getConfig().getStringList("accepted");
@@ -37,12 +37,12 @@ public class Hyvaksy implements CommandExecutor
                 this.plugin.getConfig().set("accepted", (Object)users);
                 this.plugin.saveConfig();
                 this.events.refreshUsersList();
-                player.sendMessage(ChatColor.GREEN + "Kiitos kun hyv\u00e4ksyit s\u00e4\u00e4nn\u00f6t, hauskoja pelihetki\u00e4 ;)");
+                player.sendMessage(ChatColor.GREEN + "Kiitos kun hyväksyit säännöt, hauskoja pelihetkiä ;)");
                 this.plugin.getServer().broadcastMessage("Tervetuloa " + ChatColor.AQUA + player.getName() + ChatColor.WHITE + "!");
             }
         }
         else {
-            this.plugin.getLogger().info("Et voi hyv\u00e4ksy\u00e4 s\u00e4\u00e4nt\u00f6j\u00e4 komentokuutiolla/konsolista.");
+            this.plugin.getLogger().info("Et voi hyväksyä sääntöjä komentokuutiolla/konsolista.");
         }
         return true;
     }
