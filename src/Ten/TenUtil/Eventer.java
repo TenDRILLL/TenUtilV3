@@ -27,14 +27,10 @@ public class Eventer implements Listener
     @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerJoin(final PlayerJoinEvent e) {
         final Player pl = e.getPlayer();
-        if (this.users.contains(e.getPlayer().getUniqueId().toString())) {
-            this.plugin.getServer().broadcastMessage("Tervetuloa " + ChatColor.AQUA + pl.getName() + ChatColor.WHITE + "!");
-            e.setJoinMessage("");
-        }
-        else {
+        if (!this.users.contains(e.getPlayer().getUniqueId().toString())) {
             final TextComponent message = new TextComponent("Paina tästa avataksesi säännöt");
             message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://docs.google.com/document/d/1MH_QIxVtwV2wcsKPCp2Gor4_pNYEf5h-qsa3fvfVDVs"));
-            message.setUnderlined(Boolean.valueOf(true));
+            message.setUnderlined(true);
             pl.spigot().sendMessage(message);
             pl.sendMessage("Sinun " + ChatColor.RED + "on luettava säännöt " + ChatColor.WHITE + "ennen kuin pääset pelaamaan.");
             e.setJoinMessage(ChatColor.YELLOW + pl.getName() + ChatColor.WHITE + " liittyi palvelimelle, muttei ole vielä hyväksynyt sääntöjä.");
