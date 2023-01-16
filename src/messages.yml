@@ -1,0 +1,6 @@
+CLICK_TO_OPEN: "Paina tästa avataksesi säännöt"
+NOT_ACCEPTED_PRIVATE: "Sinun &con luettava säännöt &fennen kuin pääset pelaamaan."
+NOT_ACCEPTED_PUBLIC: "&e{PLAYER} &fliittyi palvelimelle, muttei ole vielä hyväksynyt sääntöjä."
+ALREADY_ACCEPTED: "&cOlet jo hyväksynyt säännöt. &eTervetuloa ;)"
+ACCEPT: "&aKiitos kun hyväksyit säännöt, hauskoja pelihetkiä ;)"
+ACCEPTED_JOIN: "Tervetuloa &b{PLAYER}&f!"

@@ -1,11 +1,11 @@
 name: TenUtilV3
 main: Ten.TenUtil.Main
-version: 3.0.0
+version: 4.0.0
 author: Ten#0010
 commands:
-  hyvaksy:
-    description: Hyvaksy palvelimen saannot.
-    usage: /hyvaksy
-  saannot:
-    description: Avaa saannot selaimessa.
-    usage: /saannot
+  hyväksy:
+    description: Hyväksy palvelimen säännöt annetulla salasanalla.
+    usage: /hyväksy salasana
+  säännöt:
+    description: Avaa säännöt selaimessa.
+    usage: /säännöt

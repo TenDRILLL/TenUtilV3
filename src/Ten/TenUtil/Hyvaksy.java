@@ -30,8 +30,7 @@ public class Hyvaksy implements CommandExecutor
             }
             if (this.plugin.getConfig().getStringList("accepted").contains(player.getUniqueId().toString())) {
                 player.sendMessage(ChatColor.RED + "Olet jo hyväksynyt säännöt." + ChatColor.YELLOW + " Tervetuloa ;)");
-            }
-            else {
+            } else {
                 final List users = this.plugin.getConfig().getStringList("accepted");
                 users.add(player.getUniqueId().toString());
                 this.plugin.getConfig().set("accepted", (Object)users);
@@ -40,9 +39,8 @@ public class Hyvaksy implements CommandExecutor
                 player.sendMessage(ChatColor.GREEN + "Kiitos kun hyväksyit säännöt, hauskoja pelihetkiä ;)");
                 this.plugin.getServer().broadcastMessage("Tervetuloa " + ChatColor.AQUA + player.getName() + ChatColor.WHITE + "!");
             }
-        }
-        else {
-            this.plugin.getLogger().info("Et voi hyväksyä sääntöjä komentokuutiolla/konsolista.");
+        } else {
+            this.plugin.getLogger().warning("Hyväsky was attempted to be used without a user.");
         }
         return true;
     }
